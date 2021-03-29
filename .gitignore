@@ -1,7 +1,9 @@
+.vs/
 Temp/
 Library/
-.vs/
 Logs/
+Packages/
+UserSettings/
 *.vsconfig
 *.csproj
 *.sln
