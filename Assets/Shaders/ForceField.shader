@@ -78,7 +78,7 @@ Shader "Unlit/ForceField"
 			
 			fixed4 frag (v2f i,fixed face : VFACE) : SV_Target
 			{
-				// 면 중첩 계산, _CameraDepthTexture에 기록된 Depth와 정점 Shader에서 계산되어 넘어온 Depth를 비교 하여 중첩 거리 계산
+				// 면 중첩 계산, _CameraDepthTexture에 기록된 Depth와 정점 Shader에서 계산되어 넘어온 Depth를 비교 하여 중첩 적용 거리 계산
 				fixed intersect = saturate((abs(LinearEyeDepth(tex2Dproj(_CameraDepthTexture,i.screenPos).r) - i.screenPos.z)) / _IntersectionThreshold);
 
 				// 왜곡 및 배리어 질감을 나타낼 텍스쳐 텍셀 color.rgb
