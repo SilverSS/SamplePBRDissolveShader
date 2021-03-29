@@ -34,7 +34,7 @@ public class PerlinNoiseTexGenerator : MonoBehaviour
         CalcNoise();
     }
 
-    void CalcNoise()
+    public void CalcNoise()
     {
         float y = 0.0F;
 

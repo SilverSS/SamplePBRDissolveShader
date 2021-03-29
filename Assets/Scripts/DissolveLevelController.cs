@@ -5,18 +5,23 @@ using UnityEngine;
 public class DissolveLevelController : MonoBehaviour
 {
     public float repeatCycle = 2.0f;
-    float elapsedTime = 0f;
     Material mat;
     // Start is called before the first frame update
     void Start()
     {
-        elapsedTime = 0f;
         mat = GetComponent<Renderer>().material;
+        StartCoroutine(RepeatDissolveLevel());
     }
 
-    private void Update()
+    IEnumerator RepeatDissolveLevel()
     {
-        mat.SetFloat("_Level", (Mathf.Sin(elapsedTime / repeatCycle * 2f) + 1f) * 0.5f);
-        elapsedTime += Time.deltaTime;
+        float elpasedTime = 0f;
+        while(true)
+        {
+            float level = (Mathf.Sin(elpasedTime / repeatCycle * 2) + 1f) * 0.5f;
+            mat.SetFloat("_Level", level);
+            elpasedTime += Time.deltaTime;
+            yield return null;
+        }
     }
 }
