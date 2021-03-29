@@ -1,0 +1,7 @@
+Temp/
+Library/
+*.vsconfig
+*.csproj
+*.sln
+*.suo
+*.cache
