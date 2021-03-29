@@ -66,7 +66,7 @@ Shader "Custom/PBR_Dissolve"
                 discard;
 
             // cutout이 BaseMap의 Alpha 값보다 낮고 잘라낼 _Level보다 _Edges보다는 작은 경우
-            // 펄린 노이즈 특성상 그라데이션 되는 정도에 따라 경계선 부분을 지정한 _EdgeColor1 에서 _EdgeColor2 까지 선형 보간하여 색상을 결정
+            // 펄린 노이즈의 그라데이션 색상값에 따라 경계선 부분을 지정한 _EdgeColor1 에서 _EdgeColor2 까지 선형 보간하여 색상을 결정
             // (사라지는 경계선 부분 구현)
             if (cutout < c.a && cutout < _Level + _Edges)
                 c = lerp(_EdgeColor1, _EdgeColor2, (cutout - _Level) / _Edges);
