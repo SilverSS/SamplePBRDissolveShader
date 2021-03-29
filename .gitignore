@@ -1,5 +1,6 @@
 Temp/
 Library/
+.vs/
 *.vsconfig
 *.csproj
 *.sln
