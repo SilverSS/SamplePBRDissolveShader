@@ -72,7 +72,7 @@ Shader "Unlit/ForceField"
 				o.screenPos = ComputeScreenPos(o.vertex);
 
 				// 카메라로 부터 해당 정점간 거리(Depth)
-				COMPUTE_EYEDEPTH(o.screenPos.z);//eye space depth of the vertex 
+				COMPUTE_EYEDEPTH(o.screenPos.z);
 				return o;
 			}
 			
